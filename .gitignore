@@ -1,0 +1,17 @@
+# Python cache & env
+__pycache__/
+*.py[cod]
+venv/
+.env/
+*.ipynb_checkpoints
+
+# Data
+data/raw/
+data/processed/
+
+# Outputs
+outputs/
+!outputs/confusion_matrix.png
+
+# OS junk
+.DS_Store
