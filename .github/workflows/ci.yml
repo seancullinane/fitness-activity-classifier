@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      MPLBACKEND: Agg   # headless plotting
 
     steps:
       - name: Checkout repo
@@ -17,8 +19,19 @@ jobs:
 
       - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest
+          pip install pytest requests
+
+      - name: Download dataset
+        run: python src/get_data.py
+
+      - name: Sanity check data exists
+        run: |
+          ls -la "data/raw"
+          ls -la "data/raw/UCI HAR Dataset" || true
+          test -f "data/raw/UCI HAR Dataset/train/X_train.txt"
 
       - name: Run tests
-        run: pytest -q
+        run: pytest -q --maxfail=1
+
