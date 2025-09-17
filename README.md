@@ -34,6 +34,8 @@ Achieved ~90–95% accuracy on the UCI HAR test set.
 
 ![Confusion Matrix](outputs/confusion_matrix.png)
 
+[Full classification report](outputs/classification_report.txt)
+
 ## Project Structure
 fitness-activity-classifier/
 ├── data/
@@ -52,3 +54,21 @@ fitness-activity-classifier/
 ├── LICENSE
 ├── .gitignore
 └── README.md
+
+## Results
+
+**Model:** RandomForestClassifier (300 trees, random_state=42)  
+**Test accuracy:** ~94% on the UCI HAR dataset
+
+| Metric   | Value |
+|---------:|:-----:|
+| Accuracy | 0.94  |
+
+### Confusion Matrix
+![Confusion Matrix](outputs/confusion_matrix.png)
+
+### Feature Importances
+![Feature Importances](outputs/feature_importance.png)
+
+👉 [View full classification report](outputs/classification_report.txt)
+
