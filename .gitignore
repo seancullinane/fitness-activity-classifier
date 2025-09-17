@@ -12,6 +12,7 @@ data/processed/
 # Outputs
 outputs/
 !outputs/confusion_matrix.png
+!outputs/.gitkeep
 
 # OS junk
 .DS_Store
