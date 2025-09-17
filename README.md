@@ -3,6 +3,9 @@
 Classifies human activities (walking, sitting, standing, laying, stairs) from wearable sensor features (UCI HAR).  
 Tech: Python, scikit-learn, RandomForest.
 
+![CI](https://github.com/seancullinane/fitness-activity-classifier/actions/workflows/ci.yml/badge.svg)
+
+
 ## Quick start
 ```bash
 python -m venv venv && .\venv\Scripts\Activate
