@@ -1,37 +1,28 @@
 name: CI
-
 on: [push, pull_request]
-
 jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      MPLBACKEND: Agg   # headless plotting
-
+      MPLBACKEND: Agg
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest requests
-
       - name: Download dataset
         run: python src/get_data.py
-
-      - name: Sanity check data exists
+      - name: Sanity check data
         run: |
           ls -la "data/raw"
           ls -la "data/raw/UCI HAR Dataset" || true
           test -f "data/raw/UCI HAR Dataset/train/X_train.txt"
-
       - name: Run tests
         run: pytest -q --maxfail=1
+
 
