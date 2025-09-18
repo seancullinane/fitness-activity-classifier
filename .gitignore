@@ -14,6 +14,9 @@ outputs/
 !outputs/confusion_matrix.png
 !outputs/feature_importance.png
 !outputs/classification_report.txt
+!outputs/model_comparison.csv
+!outputs/model_comparison.png
+!outputs/.gitkeep
 
 # OS junk
 .DS_Store
