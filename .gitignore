@@ -12,7 +12,8 @@ data/processed/
 # Outputs
 outputs/
 !outputs/confusion_matrix.png
-!outputs/.gitkeep
+!outputs/feature_importance.png
+!outputs/classification_report.txt
 
 # OS junk
 .DS_Store
